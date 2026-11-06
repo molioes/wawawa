@@ -6,7 +6,7 @@ import javax.swing.*;
 /*
  *	Complete the Brick class.
  */
-
+/*
 public class Brick extends Canvas
 {
 	//these are instance variables
@@ -42,7 +42,7 @@ public class Brick extends Canvas
 		 *		make new Rectangle, using the other Bricks's x,y,w,h
 		 *		return if the two Rectangles intersect, use the Rectangle's intersects method.
 		 */
-		 
+		 /*
 		return false;
 	}
 
@@ -70,5 +70,5 @@ public class Brick extends Canvas
 		Image img1 = Toolkit.getDefaultToolkit().getImage("brick.png"); //use .gif or .png, you can choose the image
 		g2.drawImage(img1, getX(), getY(), getW(), getH(), this);
 		*/
-	}
-}
+//	}
+//}
