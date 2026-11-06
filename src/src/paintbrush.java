@@ -1,4 +1,6 @@
-class paintbrush {
+import java.awt.*;
+
+public class paintbrush extends Canvas {
     private int x, y, w, h;
 
     public paintbrush(){
@@ -14,5 +16,13 @@ class paintbrush {
         w = ww;
         h = hh;
     }
-    //wuahawugwa
+//    public int getX( ){ return x; }
+//    public void setX( int ex ){ x = ex; }
+//    public int getY( ){ return y; }
+//    public void setY( int wy ){ y = wy; }
+//    public int getW(){ return w; }
+//    public int getH(){ return h; }
+    public void paint(Graphics window){
+
+    }
 }
