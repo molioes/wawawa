@@ -1,14 +1,14 @@
-public class paintbrush {
+public class Paintbrush {
     private int x, y, w, h;
 
-    public paintbrush(){
+    public Paintbrush(){
         x = 2;
         y = 2;
         w = 2;
         h = 2;
     }
 
-    public paintbrush(int xx, int yy, int ww, int hh){
+    public Paintbrush(int xx, int yy, int ww, int hh){
         x = xx;
         y = yy;
         w = ww;
