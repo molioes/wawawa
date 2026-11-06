@@ -1,15 +1,4 @@
-import java.awt.*;
-
-public class paintbrush extends Canvas {
-    private int x, y, w, h;
-
-    public paintbrush(){
-        x = 2;
-        y = 2;
-        w = 2;
-        h = 2;
-    }
-    //hdryhdrf
+public class Paintbrush {
 
     public paintbrush(int xx, int yy, int ww, int hh){
         x = xx;
