@@ -9,6 +9,7 @@ public class paintbrush extends Canvas {
         w = 2;
         h = 2;
     }
+    //hdryhdrf
 
     public paintbrush(int xx, int yy, int ww, int hh){
         x = xx;
