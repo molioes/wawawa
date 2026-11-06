@@ -1,4 +1,4 @@
-public class Paintbrush {
+class Paintbrush {
     private int x, y, w, h;
 
     public Paintbrush(){
