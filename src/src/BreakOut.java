@@ -32,7 +32,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		setBackground(Color.WHITE);
 
 		//make the keys array big enough to store all keys pressed
-		keys = new boolean[3];		
+		keys = new boolean[5];
 
       
 		//Step 1
@@ -122,7 +122,13 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		if( e.getKeyCode()  == KeyEvent.VK_RIGHT )
 		{
 			keys[2]=true;
-		}					
+		}
+		if(e.getKeyCode() == KeyEvent.VK_UP){
+			keys[3]=true;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_DOWN){
+			keys[4]=true;
+		}
 	}
 
 	// do not edit anything from this point on!!!
