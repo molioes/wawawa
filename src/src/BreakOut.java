@@ -90,6 +90,12 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 			//move the paddle right         
 			keys[2] = false;
 		}
+		if(keys[3]){
+			keys[3]=false;
+		}
+		if(keys[4]){
+			keys[4]=false;
+		}
 
 		//step 1 - draw a Paddle
 		
