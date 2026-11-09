@@ -15,8 +15,49 @@ public class Generator {
         }
         numIt = (maze.length-1)*(maze.length+3)/4;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
     public static void Kruskal(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
     public static void configure(int n){
