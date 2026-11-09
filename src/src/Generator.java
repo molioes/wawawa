@@ -42,10 +42,10 @@ public class Generator {
 
     }
     public static void Kruskal(){
-
-
-
-
+    int r = (int)(Math.random()*maze.length);
+    int c = (int)(Math.random()*maze.length);
+    int dir = (int)(Math.random()*2);
+    if(maze[r][c]==0) Kruskal();
 
 
 
