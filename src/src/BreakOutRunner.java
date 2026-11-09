@@ -16,7 +16,7 @@ class BreakOutRunner extends JFrame
 
 		//use the ClassTester to test your classes
 		//before you start to write the full game
-		getContentPane().add( new ClassTester() );
+		getContentPane().add( new BreakOut() );
 
 		//uncomment this when ready to start
 		//building the game

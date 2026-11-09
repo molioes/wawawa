@@ -6,7 +6,7 @@ import javax.swing.*;
 /*
  *	Complete the Brick class.
  */
-/*
+
 public class Brick extends Canvas
 {
 	//these are instance variables
@@ -16,13 +16,13 @@ public class Brick extends Canvas
 	{
 		//complete this constructor
 	}
-	
+
 	public Brick( int ex, int wy, int wd, int ht)
 	{
 		//complete this constructor
 	}
-	
-	//Brick and any class extending Brick 
+
+	//Brick and any class extending Brick
 	//will inherit these complete methods
 	public int getX( ){ return x; }
 	public void setX( int ex ){ x = ex; }
@@ -30,8 +30,8 @@ public class Brick extends Canvas
 	public void setY( int wy ){ y = wy; }
 	public int getW(){ return w; }
 	public int getH(){ return h; }
-	
-	//write the code to see if this Brick 
+
+	//write the code to see if this Brick
 	//intersects with the other Brick
 	public boolean intersects( Brick other )
 	{
@@ -42,7 +42,7 @@ public class Brick extends Canvas
 		 *		make new Rectangle, using the other Bricks's x,y,w,h
 		 *		return if the two Rectangles intersect, use the Rectangle's intersects method.
 		 */
-		 /*
+
 		return false;
 	}
 
@@ -53,11 +53,11 @@ public class Brick extends Canvas
 
 		//Draw the Brick with graphics methods
 		//or use an Image
-		
-		
+
+
 		//PICK ONE -  YOU CANNOT DO BOTH!!!!
-		
-		
+
+
 		window.setColor(Color.RED);
 		window.fillRect(getX(), getY(), getW(), getH());
 		window.setColor(Color.BLACK);
@@ -70,5 +70,5 @@ public class Brick extends Canvas
 		Image img1 = Toolkit.getDefaultToolkit().getImage("brick.png"); //use .gif or .png, you can choose the image
 		g2.drawImage(img1, getX(), getY(), getW(), getH(), this);
 		*/
-//	}
-//}
+    }
+}
