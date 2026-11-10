@@ -1,17 +1,22 @@
 import java.awt.*;
+import java.util.Arrays;
 
 class paintbrush extends Brick{
     private int x, y, w, h;
     private Image I;
+    private int[][] painted;
 
 
-
-    public paintbrush(int xx, int yy, int ww, int hh){
+    public paintbrush(int xx, int yy, int ww, int hh, int size){
         x = xx;
         y = yy;
         w = ww;
         h = hh;
         I=Toolkit.getDefaultToolkit().getImage("images.jpg");
+        painted = new int[size][size];
+        for(int i =0;i<painted.length;i++){
+            Arrays.fill(painted[i],0);
+        }
     }
     public int getX( ){ return x; }
     public void setX( int ex ){ x = ex; }
@@ -19,28 +24,42 @@ class paintbrush extends Brick{
     public void setY( int wy ){ y = wy; }
     public int getW(){ return w; }
     public int getH(){ return h; }
+    public void getPaint(){
+        painted[getX()/10][getY()/10]=1;
+    }
     public void moveLeft(){
         I=Toolkit.getDefaultToolkit().getImage("left.png");
-        setX(getX()-10);
+        setX(getX()-25);
+        getPaint();
     }
     public void moveRight(){
         I=Toolkit.getDefaultToolkit().getImage("right.png");
-        setX(getX()+10);
+        setX(getX()+25);
+        getPaint();
     }
     public void moveUp(){
         I=Toolkit.getDefaultToolkit().getImage("images.jpg");
-        setY(getY()-10);
+        setY(getY()-25);
+        getPaint();
     }
     public void moveDown(){
         I=Toolkit.getDefaultToolkit().getImage("down.png");
-        setY(getY()+10);
+        setY(getY()+25);
+        getPaint();
     }
     public void paint( Graphics window )
     {
 
         //Draw the Paddle with graphics methods
         //or use an Image
-
+        window.setColor(Color.PINK);
+        for(int i =0;i<painted.length;i++){
+            for(int j = 0;j<painted.length;j++){
+                if(painted[i][j]==1){
+                    window.fillRect(i*10,j*10,25,25);
+                }
+            }
+        }
 
         //PICK ONE -  YOU CANNOT DO BOTH!!!!
 

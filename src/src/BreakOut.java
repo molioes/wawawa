@@ -38,7 +38,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		//Step 1
 		//initialize the Paddle
 		//put the paddle close to the bottom of the screen.
-		paint = new paintbrush(200,200,50,50);
+		paint = new paintbrush(200,200,50,50,100);
 
 		//Step 2
 		//initialize the Ball
