@@ -48,7 +48,7 @@ public class Generator {
     if(maze[r][c]==0) Kruskal();
     int nr = r+dir;
     int nc = c+dir;
-
+    if(nr<0||nr>maze.length||nc<0||nc>maze.length) Kruskal();
 
 
 
@@ -62,5 +62,14 @@ public class Generator {
     }
     public static void configure(int n){
 
+    }
+
+}
+class Edge{
+    int src, dst, wt;
+    public Edge(int source, int destination, int weight){
+        src = source;
+        dst = destination;
+        wt = weight;
     }
 }
