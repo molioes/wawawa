@@ -16,9 +16,26 @@ class paintbrush extends Brick{
         w = ww;
         h = hh;
     }
+    public int getX( ){ return x; }
+    public void setX( int ex ){ x = ex; }
+    public int getY( ){ return y; }
+    public void setY( int wy ){ y = wy; }
+    public int getW(){ return w; }
+    public int getH(){ return h; }
+    public void moveLeft(){
+        setX(getX()-10);
+    }
+    public void moveRight(){
+        setX(getX()+10);
+    }
+    public void moveUp(){
+        setY(getY()-10);
+    }
+    public void moveDown(){
+        setY(getY()+10);
+    }
     public void paint( Graphics window )
     {
-        window.drawString("Paddle Class ", 50, 150 );
 
         //Draw the Paddle with graphics methods
         //or use an Image
