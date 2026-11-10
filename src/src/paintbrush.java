@@ -3,7 +3,7 @@ import java.util.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class paintbrush extends Brick {
+class paintbrush extends Brick{
     private int x, y, w, h;
 
     public paintbrush(){
