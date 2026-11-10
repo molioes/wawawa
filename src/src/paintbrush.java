@@ -1,9 +1,4 @@
-import java.awt.*;
-import java.util.*;
-import java.awt.event.*;
-import javax.swing.*;
-
-class paintbrush extends Brick{
+class paintbrush {
     private int x, y, w, h;
 
     public paintbrush(){
