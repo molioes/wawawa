@@ -63,4 +63,13 @@ public class Generator {
     public static void configure(int n){
 
     }
+
+}
+class Edge{
+    int src, dst, wt;
+    public Edge(int source, int destination, int weight){
+        src = source;
+        dst = destination;
+        wt = weight;
+    }
 }
