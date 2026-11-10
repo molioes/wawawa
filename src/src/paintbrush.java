@@ -1,4 +1,6 @@
-class paintbrush {
+import java.awt.*;
+
+class paintbrush extends Brick{
     private int x, y, w, h;
 
     public paintbrush(){
