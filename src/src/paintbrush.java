@@ -77,9 +77,9 @@ class paintbrush extends Brick{
 
         //Find an Image for your Paddle.
 
-		Graphics2D g2 = (Graphics2D) window;
-    	//use .gif or .png, you can choose the image
-    	g2.drawImage(I, getX(), getY(), getW(), getH(), this);
+        Graphics2D g2 = (Graphics2D) window;
+        //use .gif or .png, you can choose the image
+        g2.drawImage(I, getX(), getY(), getW(), getH(), this);
 
     }
     //wuahawugwa
