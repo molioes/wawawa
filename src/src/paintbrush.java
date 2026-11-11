@@ -35,7 +35,7 @@ class paintbrush extends Brick{
     }
     public void moveRight(){
         I=Toolkit.getDefaultToolkit().getImage("right.png");
-        if(getX()<810)
+        if(getX()<750)
             setX(getX()+25);
         getPaint();
     }
@@ -47,7 +47,7 @@ class paintbrush extends Brick{
     }
     public void moveDown(){
         I=Toolkit.getDefaultToolkit().getImage("down.png");
-        if(getY()<610)
+        if(getY()<530)
             setY(getY()+25);
         getPaint();
     }
@@ -60,7 +60,7 @@ class paintbrush extends Brick{
         for(int i =0;i<painted.length;i++){
             for(int j = 0;j<painted.length;j++){
                 if(painted[i][j]==1){
-                    window.fillRect(i*10,j*10,25,25);
+                    window.fillRect(i*10,j*10,50,50);
                 }
             }
         }
