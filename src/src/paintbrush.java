@@ -29,22 +29,26 @@ class paintbrush extends Brick{
     }
     public void moveLeft(){
         I=Toolkit.getDefaultToolkit().getImage("left.png");
-        setX(getX()-25);
+        if(getX()>15)
+            setX(getX()-25);
         getPaint();
     }
     public void moveRight(){
         I=Toolkit.getDefaultToolkit().getImage("right.png");
-        setX(getX()+25);
+        if(getX()<810)
+            setX(getX()+25);
         getPaint();
     }
     public void moveUp(){
         I=Toolkit.getDefaultToolkit().getImage("images.jpg");
-        setY(getY()-25);
+        if(getY()>15)
+            setY(getY()-25);
         getPaint();
     }
     public void moveDown(){
         I=Toolkit.getDefaultToolkit().getImage("down.png");
-        setY(getY()+25);
+        if(getY()<610)
+            setY(getY()+25);
         getPaint();
     }
     public void paint( Graphics window )
