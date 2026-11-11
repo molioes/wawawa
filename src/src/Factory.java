@@ -15,4 +15,7 @@ public class Factory {
     public static void configure(int n){
 
     }
+    public static char[][] getMaze(){
+        return maze;
+    }
 }
