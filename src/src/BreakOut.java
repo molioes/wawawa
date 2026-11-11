@@ -12,7 +12,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 	//PADDLE MUST WORK COMPLETELY
 	//step 1
 	// define a Paddle
-	
+	private paintbrush paint;
 	
 	
 	//NOTE : CCOMPLETE ALL of STEP 2 AFTER the PADDLE works
@@ -38,7 +38,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		//Step 1
 		//initialize the Paddle
 		//put the paddle close to the bottom of the screen.
-
+		paint = new paintbrush(200,200,50,50,100);
 
 		//Step 2
 		//initialize the Ball
@@ -81,18 +81,28 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		// left arrow is pressed
 		if(keys[1]) 
 		{
+			paint.moveLeft();
 			//move the paddle left			
 			keys[1] = false;
 		}
 		// right arrow is pressed
 		if(keys[2]) 
-		{	
+		{
+			paint.moveRight();
 			//move the paddle right         
 			keys[2] = false;
 		}
+		if(keys[3]){
+			paint.moveUp();
+			keys[3]=false;
+		}
+		if(keys[4]){
+			paint.moveDown();
+			keys[4]=false;
+		}
 
 		//step 1 - draw a Paddle
-		
+		paint.paint(window);
 
 		//step 2 - draw a Ball
 		
