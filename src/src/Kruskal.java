@@ -6,7 +6,7 @@ public class Kruskal {
     private boolean[][] h;
     private boolean[][] v;
     public Kruskal(int w, int h){
-        run(w,h);
+        run(w/2,h/2);
     }
     public void run(int wd, int ht){
         width = wd;
@@ -72,6 +72,58 @@ public class Kruskal {
             }
             System.out.println("O");
         }
+    }
+    public void printMatrix(){
+        //for (int x = 0; x < width; x++) {
+            //System.out.print("00"); //40s
+        //}
+        //System.out.println("0");
+        for (int y = 0; y < height; y++) {
+            System.out.print(0);
+            for (int x = 0; x < width; x++) {
+                System.out.print(1); //3 ones
+                if (v[y][x] && x < width - 1) {
+                    System.out.print(0);
+                } else if (x < width - 1) {
+                    System.out.print(1);
+                }
+            }
+            System.out.println(); //0
+            for (int x = 0; x < width; x++) {
+                System.out.print(0);
+                if (h[y][x] && y < height - 1) {
+                    System.out.print(0); //30s
+                } else {
+                    System.out.print(1); //31s
+                }
+            }
+            System.out.println(); //0
+        }
+    }
+    public String report(){
+        StringBuilder s = new StringBuilder();
+        for (int y = 0; y < height; y++) {
+            s.append(0);
+            for (int x = 0; x < width; x++) {
+                s.append(1); //3 ones
+                if (v[y][x] && x < width - 1) {
+                    s.append(0);
+                } else if (x < width - 1) {
+                    s.append(1);
+                }
+            }
+            s.append("\n"); //0
+            for (int x = 0; x < width; x++) {
+                s.append(0);
+                if (h[y][x] && y < height - 1) {
+                    s.append(0); //30s
+                } else {
+                    s.append(1); //31s
+                }
+            }
+            s.append("\n"); //0
+        }
+        return s.toString();
     }
 }
 class Edge{
