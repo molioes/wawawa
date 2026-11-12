@@ -11,7 +11,7 @@ public class Factory {
         for(String s : split){
             maze[i++] = s.toCharArray();
         }
-        loop((int) Math.floor(maze.length*maze[0].length*(Math.random())));
+        loop((int) Math.floor(maze.length*maze[0].length*(Math.random()*1.25)));
     }
     private static void loop(int n){
         int panic = 0;
