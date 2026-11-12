@@ -12,7 +12,7 @@ class paintbrush extends Brick{
         y = yy;
         w = ww;
         h = hh;
-        I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
+        I=Toolkit.getDefaultToolkit().getImage("images.jpg");
         painted = new int[size][size];
         for(int i =0;i<painted.length;i++){
             Arrays.fill(painted[i],0);
@@ -27,29 +27,42 @@ class paintbrush extends Brick{
     public void getPaint(){
         painted[getX()/10][getY()/10]=1;
     }
-    public void moveLeft(){
-        I=Toolkit.getDefaultToolkit().getImage("lefties.png");
-        if(getX()>15)
+    public void moveLeft(mazeOnScreen m){
+        I=Toolkit.getDefaultToolkit().getImage("left.png");
+        if(getX()>15&&onPath(m))
             setX(getX()-25);
         getPaint();
     }
-    public void moveRight(){
-        I=Toolkit.getDefaultToolkit().getImage("rights.png");
-        if(getX()<750)
+    public void moveRight(mazeOnScreen m){
+        I=Toolkit.getDefaultToolkit().getImage("right.png");
+        if(getX()<750&&onPath(m))
             setX(getX()+25);
         getPaint();
     }
-    public void moveUp(){
-        I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
-        if(getY()>15)
+    public void moveUp(mazeOnScreen m){
+        I=Toolkit.getDefaultToolkit().getImage("images.jpg");
+        if(getY()>15&&onPath(m))
             setY(getY()-25);
         getPaint();
     }
-    public void moveDown(){
-        I=Toolkit.getDefaultToolkit().getImage("downs.png");
-        if(getY()<530)
+    public void moveDown(mazeOnScreen m){
+        I=Toolkit.getDefaultToolkit().getImage("down.png");
+        if(getY()<530&&onPath(m))
             setY(getY()+25);
         getPaint();
+    }
+    public boolean onPath(mazeOnScreen m){
+        boolean yes=true;
+        for(int i =0;i<m.getMaze().length;i++){
+            for(int j =0;j<m.getMaze()[i].length;j++){
+                if(getX()>=m.getMaze()[i][j]*50&&getX()<=m.getMaze()[i][j]*50+50&&getY()>=m.getMaze()[i][j]*50&&getY()<=m.getMaze()[i][j]*50+50){
+                    yes=false;
+                    break;
+                }
+            }
+        }
+        return yes;
+
     }
     public void paint( Graphics window )
     {

@@ -7,7 +7,9 @@ class mazeOnScreen extends Canvas{
     public mazeOnScreen(char[][] m){
         maze = m;
     }
-
+    public char[][] getMaze(){
+        return maze;
+    }
     @Override
     public void paint(Graphics window) {
         window.setColor(Color.BLACK);

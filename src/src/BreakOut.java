@@ -82,23 +82,23 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		// left arrow is pressed
 		if(keys[1]) 
 		{
-			paint.moveLeft();
+			paint.moveLeft(maze);
 			//move the paddle left			
 			keys[1] = false;
 		}
 		// right arrow is pressed
 		if(keys[2]) 
 		{
-			paint.moveRight();
+			paint.moveRight(maze);
 			//move the paddle right         
 			keys[2] = false;
 		}
 		if(keys[3]){
-			paint.moveUp();
+			paint.moveUp(maze);
 			keys[3]=false;
 		}
 		if(keys[4]){
-			paint.moveDown();
+			paint.moveDown(maze);
 			keys[4]=false;
 		}
 
