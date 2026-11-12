@@ -12,7 +12,7 @@ class paintbrush extends Brick{
         y = yy;
         w = ww;
         h = hh;
-        I=Toolkit.getDefaultToolkit().getImage("images.jpg");
+        I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
         painted = new int[size][size];
         for(int i =0;i<painted.length;i++){
             Arrays.fill(painted[i],0);
@@ -28,25 +28,25 @@ class paintbrush extends Brick{
         painted[getX()/10][getY()/10]=1;
     }
     public void moveLeft(){
-        I=Toolkit.getDefaultToolkit().getImage("left.png");
+        I=Toolkit.getDefaultToolkit().getImage("lefties.png");
         if(getX()>15)
             setX(getX()-25);
         getPaint();
     }
     public void moveRight(){
-        I=Toolkit.getDefaultToolkit().getImage("right.png");
+        I=Toolkit.getDefaultToolkit().getImage("rights.png");
         if(getX()<750)
             setX(getX()+25);
         getPaint();
     }
     public void moveUp(){
-        I=Toolkit.getDefaultToolkit().getImage("images.jpg");
+        I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
         if(getY()>15)
             setY(getY()-25);
         getPaint();
     }
     public void moveDown(){
-        I=Toolkit.getDefaultToolkit().getImage("down.png");
+        I=Toolkit.getDefaultToolkit().getImage("downs.png");
         if(getY()<530)
             setY(getY()+25);
         getPaint();
