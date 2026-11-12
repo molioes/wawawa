@@ -27,29 +27,42 @@ class paintbrush extends Brick{
     public void getPaint(){
         painted[getX()/10][getY()/10]=1;
     }
-    public void moveLeft(){
+    public void moveLeft(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("left.png");
-        if(getX()>15)
+        if(getX()>15&&onPath(m))
             setX(getX()-25);
         getPaint();
     }
-    public void moveRight(){
+    public void moveRight(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("right.png");
-        if(getX()<750)
+        if(getX()<750&&onPath(m))
             setX(getX()+25);
         getPaint();
     }
-    public void moveUp(){
+    public void moveUp(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("images.jpg");
-        if(getY()>15)
+        if(getY()>15&&onPath(m))
             setY(getY()-25);
         getPaint();
     }
-    public void moveDown(){
+    public void moveDown(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("down.png");
-        if(getY()<530)
+        if(getY()<530&&onPath(m))
             setY(getY()+25);
         getPaint();
+    }
+    public boolean onPath(mazeOnScreen m){
+        boolean yes=true;
+        for(int i =0;i<m.getMaze().length;i++){
+            for(int j =0;j<m.getMaze()[i].length;j++){
+                if(getX()>=m.getMaze()[i][j]*50&&getX()<=m.getMaze()[i][j]*50+50&&getY()>=m.getMaze()[i][j]*50&&getY()<=m.getMaze()[i][j]*50+50){
+                    yes=false;
+                    break;
+                }
+            }
+        }
+        return yes;
+
     }
     public void paint( Graphics window )
     {
@@ -77,9 +90,8 @@ class paintbrush extends Brick{
 
         //Find an Image for your Paddle.
 
-		Graphics2D g2 = (Graphics2D) window;
-    	Image img1 = Toolkit.getDefaultToolkit().getImage("images.jpg"); //use .gif or .png, you can choose the image
-    	g2.drawImage(img1, getX(), getY(), getW(), getH(), this);
+		Graphics2D g2 = (Graphics2D) window; //use .gif or .png, you can choose the image
+    	g2.drawImage(I, getX(), getY(), getW(), getH(), this);
 
     }
     //wuahawugwa
