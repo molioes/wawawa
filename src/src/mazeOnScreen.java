@@ -12,6 +12,9 @@ class mazeOnScreen extends Canvas{
     public char[][] getMaze(){
         return maze;
     }
+    public LinkedList<Rectangle> getList(){
+        return list;
+    }
 
     @Override
     public void paint(Graphics window) {
