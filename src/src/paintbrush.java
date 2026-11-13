@@ -12,7 +12,7 @@ class paintbrush extends Brick{
         y = yy;
         w = ww;
         h = hh;
-        I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
+        I=Toolkit.getDefaultToolkit().getImage("fishyup.jpg");
         painted = new int[size][size];
         for(int i =0;i<painted.length;i++){
             Arrays.fill(painted[i],0);
@@ -28,28 +28,28 @@ class paintbrush extends Brick{
         painted[getX()/10][getY()/10]=1;
     }
     public void moveLeft(mazeOnScreen m){
-        I=Toolkit.getDefaultToolkit().getImage("lefties.png");
+        I=Toolkit.getDefaultToolkit().getImage("fishyleft.png");
         if(getX()>15&&onPath(m))
             setX(getX()-50);
         if(!onPath(m)) setX(getX()+50);
         getPaint();
     }
     public void moveRight(mazeOnScreen m){
-        I=Toolkit.getDefaultToolkit().getImage("rights.png");
+        I=Toolkit.getDefaultToolkit().getImage("fishyright.png");
         if(getX()<750&&onPath(m))
             setX(getX()+50);
         if(!onPath(m)) setX(getX()-50);
         getPaint();
     }
     public void moveUp(mazeOnScreen m){
-        I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
+        I=Toolkit.getDefaultToolkit().getImage("fishyup.jpg");
         if(getY()>15&&onPath(m))
             setY(getY()-50);
         if(!onPath(m))setY(getY()+50);
         getPaint();
     }
     public void moveDown(mazeOnScreen m){
-        I=Toolkit.getDefaultToolkit().getImage("downs.png");
+        I=Toolkit.getDefaultToolkit().getImage("fishydown.png");
         if(getY()<530)
             setY(getY()+50);
         if(!onPath(m))setY(getY()-50);
