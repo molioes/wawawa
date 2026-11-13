@@ -36,21 +36,21 @@ class paintbrush extends Brick{
     }
     public void moveRight(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("rights.png");
-        if(getX()<750&&onPath(m))
+        if(getX()<420)
             setX(getX()+50);
         if(!onPath(m)) setX(getX()-50);
         getPaint();
     }
     public void moveUp(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("uppies.jpg");
-        if(getY()>15&&onPath(m))
+        if(getY()>15)
             setY(getY()-50);
         if(!onPath(m))setY(getY()+50);
         getPaint();
     }
     public void moveDown(mazeOnScreen m){
         I=Toolkit.getDefaultToolkit().getImage("downs.png");
-        if(getY()<530)
+        if(getY()<420)
             setY(getY()+50);
         if(!onPath(m))setY(getY()-50);
         getPaint();
@@ -60,11 +60,10 @@ class paintbrush extends Brick{
         Rectangle p = new Rectangle(getX(),getY(),getW(),getH());
         for(int i =0;i<m.getList().size();i++){
             if(m.getList().get(i).intersects(p)){
-                yes = false;
-                break;
+                return false;
             }
         }
-        return yes;
+        return true;
 
     }
     public void paint( Graphics window )

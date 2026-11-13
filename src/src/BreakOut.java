@@ -14,6 +14,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 	// define a Paddle
 	private paintbrush paint;
 	private mazeOnScreen maze;
+	private int recent;
 	
 	//NOTE : CCOMPLETE ALL of STEP 2 AFTER the PADDLE works
 	//step 2
@@ -33,13 +34,13 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 
 		//make the keys array big enough to store all keys pressed
 		keys = new boolean[5];
-
+		recent=-1;
       
 		//Step 1
 		//initialize the Paddle
 		//put the paddle close to the bottom of the screen.
 		paint = new paintbrush(200,200,50,50,100);
-		Factory.run(20,20);
+		Factory.run(10,10);
 		maze = new mazeOnScreen(Factory.getMaze());
 		//Step 2
 		//initialize the Ball
@@ -80,26 +81,34 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 			//what do you do here?		
 		}
 		// left arrow is pressed
-		if(keys[1]) 
+		if(keys[1]&&recent==1)
 		{
 			paint.moveLeft(maze);
 			//move the paddle left			
-			keys[1] = false;
+			keys[2] = false;
+			keys[3]=false;
+			keys[4]=false;
 		}
 		// right arrow is pressed
-		if(keys[2]) 
+		if(keys[2]&&recent==2)
 		{
 			paint.moveRight(maze);
-			//move the paddle right         
-			keys[2] = false;
-		}
-		if(keys[3]){
-			paint.moveUp(maze);
+			//move the paddle right
+			keys[1] = false;
 			keys[3]=false;
-		}
-		if(keys[4]){
-			paint.moveDown(maze);
 			keys[4]=false;
+		}
+		if(keys[3]&&recent==3){
+			paint.moveUp(maze);
+			keys[2] = false;
+			keys[1]=false;
+			keys[4]=false;
+		}
+		if(keys[4]&&recent==4){
+			paint.moveDown(maze);
+			keys[2] = false;
+			keys[3]=false;
+			keys[1]=false;
 		}
 
 		//step 1 - draw a Paddle
@@ -123,22 +132,27 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		if( e.getKeyCode()  == KeyEvent.VK_SPACE )
 		{
 			keys[0]=true;
+			recent=0;
 		}
 		
 		if( e.getKeyCode()  == KeyEvent.VK_LEFT )
 		{
 			keys[1]=true;
+			recent=1;
 		}
 		
 		if( e.getKeyCode()  == KeyEvent.VK_RIGHT )
 		{
 			keys[2]=true;
+			recent=2;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_UP){
 			keys[3]=true;
+			recent=3;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_DOWN){
 			keys[4]=true;
+			recent=4;
 		}
 	}
 
