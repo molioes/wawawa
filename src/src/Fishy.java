@@ -1,0 +1,5 @@
+class Fishy extends Brick{
+
+
+
+}
