@@ -27,8 +27,7 @@ import java.util.Arrays;
         }
 //paintbrsuh
         public void recur(int r, int c, mazeOnScreen m){
-            if(r > -1 && c > -1 && r < m.getMaze().length && c < m.getMaze()[0].length &&  onPath(m)) {
-
+            if(r > -1 && c > -1 && r < m.getMaze().length && c < m.getMaze()[0].length && onPath(m)) {
 
                 recur(r - 1, c, m);
                 recur(r + 1, c, m);
