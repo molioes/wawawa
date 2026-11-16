@@ -25,18 +25,17 @@ import java.util.Arrays;
         public void getPaint(){
             painted[getX()/10][getY()/10]=1;
         }
+//paintbrsuh
+        public void recur(int r, int c, mazeOnScreen m){
+            if(r > -1 && c > -1 && r < m.getMaze().length && c < m.getMaze()[0].length &&  onPath(m)) {
 
-        public void recur(int r, int c){
 
-
-
-            recur(r-1, c);
-            recur(r+1, c);
-            recur(r, c-1);
-            recur(r, c+1);
+                recur(r - 1, c, m);
+                recur(r + 1, c, m);
+                recur(r, c - 1, m);
+                recur(r, c + 1, m);
+            }
         }
-
-
 
         public boolean onPath(mazeOnScreen m){
             boolean yes=true;
