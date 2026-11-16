@@ -8,6 +8,13 @@ class mazeOnScreen extends Canvas{
     public mazeOnScreen(char[][] m){
         maze = m;
         list = new LinkedList<>();
+        for(int i =0;i<maze.length;i++){
+            for(int j = 0;j<maze.length;j++){
+                if(maze[i][j]=='0'){
+                    list.add(new Rectangle(i*50,j*50,50,50));
+                }
+            }
+        }
     }
     public char[][] getMaze(){
         return maze;
@@ -23,7 +30,6 @@ class mazeOnScreen extends Canvas{
         for(int i =0;i<maze.length;i++){
             for(int j = 0;j<maze.length;j++){
                 if(maze[i][j]=='0'){
-                    list.add(new Rectangle(i*50,j*50,50,50));
                     window.fillRect(i*50,j*50,50,50);
                 }
             }
