@@ -5,7 +5,6 @@ import java.util.Arrays;
         private Image I;
         private int[][] painted;
 
-
         public Fishy(int xx, int yy, int ww, int hh, int size){
             x = xx;
             y = yy;
@@ -27,6 +26,15 @@ import java.util.Arrays;
             painted[getX()/10][getY()/10]=1;
         }
 
+        public void recur(int r, int c){
+
+
+
+            recur(r-1, c);
+            recur(r+1, c);
+            recur(r, c-1);
+            recur(r, c+1);
+        }
 
 
 
@@ -40,8 +48,8 @@ import java.util.Arrays;
                 }
             }
             return yes;
-
         }
+
         public void paint( Graphics window )
         {
 
