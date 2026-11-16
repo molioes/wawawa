@@ -15,6 +15,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 	private paintbrush paint;
 	private mazeOnScreen maze;
 	private int recent;
+	private int tick;
 	
 	//NOTE : CCOMPLETE ALL of STEP 2 AFTER the PADDLE works
 	//step 2
@@ -35,7 +36,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		//make the keys array big enough to store all keys pressed
 		keys = new boolean[5];
 		recent=-1;
-      
+      	tick =0;
 		//Step 1
 		//initialize the Paddle
 		//put the paddle close to the bottom of the screen.
@@ -73,7 +74,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		window.setColor(Color.BLACK); 
 		window.drawRect( 0,0, 800, 600); 
 
-		window.setColor(Color.BLUE); 
+		window.setColor(Color.BLUE);
 
 		// space is pressed
 		if(keys[0]) 
@@ -83,7 +84,10 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		// left arrow is pressed
 		if(keys[1]&&recent==1)
 		{
-			paint.moveLeft(maze);
+			if((tick%10)==0) {
+				paint.moveLeft(maze);
+				tick = 0;
+			}
 			//move the paddle left			
 			keys[2] = false;
 			keys[3]=false;
@@ -92,24 +96,25 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		// right arrow is pressed
 		if(keys[2]&&recent==2)
 		{
-			paint.moveRight(maze);
+			if((tick%10)==0){paint.moveRight(maze);tick=0;}
 			//move the paddle right
 			keys[1] = false;
 			keys[3]=false;
 			keys[4]=false;
 		}
 		if(keys[3]&&recent==3){
-			paint.moveUp(maze);
+			if((tick%10)==0){paint.moveUp(maze); tick=0;}
 			keys[2] = false;
 			keys[1]=false;
 			keys[4]=false;
 		}
 		if(keys[4]&&recent==4){
-			paint.moveDown(maze);
+			if((tick%10)==0){paint.moveDown(maze);tick=0;}
 			keys[2] = false;
 			keys[3]=false;
 			keys[1]=false;
 		}
+		tick++;
 
 		//step 1 - draw a Paddle
 		paint.paint(window);
