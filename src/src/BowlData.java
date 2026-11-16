@@ -13,8 +13,8 @@ public class BowlData {
     }
     public BowlData(int[] min, int[] max, int[] start){
         if(min[0]==max[0])
-            isHorizontal = false;
-        else isHorizontal = true;
+            isHorizontal = true;
+        else isHorizontal = false;
         minCoords = min;
         maxCoords = max;
         startCoords = start;
@@ -25,8 +25,14 @@ public class BowlData {
                 return false;
             return minCoords[1]<o.maxCoords[1]&&maxCoords[1]<o.minCoords[1];
         }
-        if(minCoords[1]!=o.minCoords[1])
-            return false;
-        return minCoords[0]<o.maxCoords[0]&&maxCoords[0]<o.minCoords[0];
+        if(!isHorizontal&&!o.isHorizontal) {
+            if (minCoords[1] != o.minCoords[1])
+                return false;
+            return minCoords[0] < o.maxCoords[0] && maxCoords[0] < o.minCoords[0];
+        }
+        return false;
+    }
+    public String toString(){
+        return minCoords[0]+","+minCoords[1]+" - "+maxCoords[0]+","+maxCoords[1]+" ("+(isHorizontal?"horizontal":"vertical")+")";
     }
 }

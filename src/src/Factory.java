@@ -11,7 +11,7 @@ public class Factory {
             maze[i++] = s.toCharArray();
         }
         loop((int) Math.floor(maze.length*maze[0].length*(Math.random()*1.25)));
-        configure((int) Math.floor(maze.length*maze[0].length*(Math.random()*0.25)));
+        configure((int) Math.floor(maze.length*(Math.random()*0.5)));
     }
     private static void loop(int n){
         int panic = 0;
@@ -36,16 +36,22 @@ public class Factory {
         return (U==1&&D==1&&(L!=1||R!=1))||(L==1&&R==1&&(U!=1||D!=1))?1:0;
     }
     public static void configure(int n){
+        System.out.println(n);
         int panic = 0;
+        bowls = new HashSet<>();
         while(n>0&&panic++<maze.length*maze[0].length/4){
             int r = (int) (Math.random()*maze.length);
             int c = (int) (Math.random()*maze[0].length);
             boolean b = ((int)(Math.random()*2))==1;
             if(maze[r][c]=='1') {
                 int[][] span = findLongestSpan(r, c, b);
-                BowlData razr = new BowlData(span[0],span[1], new int[]{r,c});
-                if(!isContained(razr))
-                    bowls.add(razr);
+                if(span[0][0]!=span[1][0]||span[0][1]!=span[1][1]) {
+                    BowlData razr = new BowlData(span[0], span[1], new int[]{r, c});
+                    if (!isContained(razr)) {
+                        bowls.add(razr);
+                        n--;
+                    }
+                }
             }
         }
     }
@@ -81,5 +87,8 @@ public class Factory {
     }
     public static char[][] getMaze(){
         return maze;
+    }
+    public static HashSet<BowlData> getBowls(){
+        return bowls;
     }
 }
