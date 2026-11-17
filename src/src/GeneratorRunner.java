@@ -16,5 +16,20 @@ public class GeneratorRunner {
             }
             System.out.println();
         }
+        System.out.println();
+        System.out.println(Factory.getBowls());
+        System.out.println(Factory.getBowls().size());
+        Factory.run(10,10);
+        System.out.println();
+        maze = Factory.getMaze();
+        for(char[] arr:maze){
+            for(char c : arr){
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println(Factory.getBowls());
+        System.out.println(Factory.getBowls().size());
     }
 }
