@@ -16,6 +16,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 	private mazeOnScreen maze;
 	private int recent;
 	private int tick;
+    private Fishy fihs;
 	
 	//NOTE : CCOMPLETE ALL of STEP 2 AFTER the PADDLE works
 	//step 2
@@ -41,8 +42,10 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		//initialize the Paddle
 		//put the paddle close to the bottom of the screen.
 		paint = new paintbrush(200,200,50,50,100);
+
 		Factory.run(10,10);
 		maze = new mazeOnScreen(Factory.getMaze());
+        fihs = new Fishy(200, 200, 50, 50, 100);
 		//Step 2
 		//initialize the Ball
 		//start the bal in the middle of the screen
@@ -119,6 +122,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		//step 1 - draw a Paddle
 		paint.paint(window);
 		maze.paint(window);
+        fihs.paint(window);
 		//step 2 - draw a Ball
 		
 

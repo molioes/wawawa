@@ -10,7 +10,7 @@ import java.util.Arrays;
             y = yy;
             w = ww;
             h = hh;
-            I=Toolkit.getDefaultToolkit().getImage("fishyup.jpg");
+            I=Toolkit.getDefaultToolkit().getImage("fishyleft.png");
             painted = new int[size][size];
             for(int i =0;i<painted.length;i++){
                 Arrays.fill(painted[i],0);
@@ -53,14 +53,15 @@ import java.util.Arrays;
 
             //Draw the Paddle with graphics methods
             //or use an Image
-            window.setColor(Color.PINK);
-            for(int i =0;i<painted.length;i++){
-                for(int j = 0;j<painted.length;j++){
-                    if(painted[i][j]==1){
-                        window.fillRect(i*10,j*10,50,50);
-                    }
-                }
-            }
+            window.setColor(Color.RED);
+            window.drawString("FISHDFHKSDJFKSDHGLD",100,100);
+//            for(int i =0;i<painted.length;i++){
+//                for(int j = 0;j<painted.length;j++){
+//                    if(painted[i][j]==1){
+//                        window.fillRect(i*10,j*10,50,50);
+//                    }
+//                }
+//            }
 
             //PICK ONE -  YOU CANNOT DO BOTH!!!!
 
