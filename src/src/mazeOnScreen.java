@@ -26,7 +26,6 @@ class mazeOnScreen extends Canvas{
     @Override
     public void paint(Graphics window) {
         window.setColor(Color.BLACK);
-        window.drawString("maze",200,200);
         for(int i =0;i<maze.length;i++){
             for(int j = 0;j<maze.length;j++){
                 if(maze[i][j]=='0'){

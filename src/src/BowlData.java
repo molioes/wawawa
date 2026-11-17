@@ -23,14 +23,17 @@ public class BowlData {
         if(isHorizontal&&o.isHorizontal){
             if(minCoords[0]!=o.minCoords[0])
                 return false;
-            return minCoords[1]<o.maxCoords[1]&&maxCoords[1]<o.minCoords[1];
+            return !(minCoords[1]<=o.maxCoords[1]&&maxCoords[1]<=o.minCoords[1]);
         }
         if(!isHorizontal&&!o.isHorizontal) {
             if (minCoords[1] != o.minCoords[1])
                 return false;
-            return minCoords[0] < o.maxCoords[0] && maxCoords[0] < o.minCoords[0];
+            return !(minCoords[0] <= o.maxCoords[0] && maxCoords[0] <= o.minCoords[0]);
         }
         return false;
+    }
+    public int length(){
+        return Math.max(Math.abs(minCoords[0]-maxCoords[0]),Math.abs(minCoords[1]-maxCoords[1]));
     }
     public String toString(){
         return minCoords[0]+","+minCoords[1]+" - "+maxCoords[0]+","+maxCoords[1]+" ("+(isHorizontal?"horizontal":"vertical")+")";

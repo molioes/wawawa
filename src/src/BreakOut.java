@@ -77,8 +77,6 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		window.setColor(Color.BLACK); 
 		window.drawRect( 0,0, 800, 600); 
 
-		window.setColor(Color.BLUE);
-
 		// space is pressed
 		if(keys[0]) 
 		{
@@ -124,7 +122,7 @@ class BreakOut extends JPanel implements Runnable, KeyListener
 		maze.paint(window);
         fihs.paint(window);
 		//step 2 - draw a Ball
-		
+
 
 		//step 3 -draw the bricks
 		
